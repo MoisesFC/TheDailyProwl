@@ -1,42 +1,113 @@
-#root {
-  max-width: 1280px;
+.app-background {
+  position: relative;      /* make the container the reference for absolute children */
+  width: 100%;
+  height: 100%;
+  max-width: 420px;
   margin: 0 auto;
-  padding: 2rem;
+  background-image: url('./assets/Page1/DPBG.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+   padding-top: 10%;  /* shifts title & owl down */
+}
+
+.sun-icon {
+  position: absolute;   
+  top: 2%;           /* instead of 12px */
+  right: 8%;  /* safer than left 62% */         /* instead of 237px */
+  width: 36%;   /* 25% of container width */ 
+  height: auto;
+}
+
+
+.app-title {
+  white-space: nowrap;  /* prevents text from breaking to the next line */
+  position: absolute;
+  top: 20%;       /* adjust so it’s below the sun */
+  left: 50%;      /* center horizontally */
+  transform: translateX(-50%); /* truly center */
+  font-family: 'Burbank Big Condensed', sans-serif;
+  font-size: clamp(1.5rem, 5vw, 3rem);  
+  font-weight: bold;
+  color: black;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+
+.owl-logo {
+  position: absolute;
+  top: 25%;          /* adjust this to place it below the title */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;        /* scales with container width */
+  height: auto;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.log-in {
+  white-space: nowrap;  /* prevents text from breaking to the next line */
+  position: absolute;
+  bottom: 30%;       /* adjust so it’s below the sun */
+  left: 50%;      /* center horizontally */
+  transform: translateX(-50%); /* truly center */
+  font-family: 'Burbank Big Condensed', sans-serif;
+  font-size: clamp(1.5rem, 5vw, 3rem);  
+  font-weight: bold;
+  color: black;
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+
+
+.input-wrapper {
+  display: flex;
+  align-items: center;   /* vertically center text with input */
 }
 
-.card {
-  padding: 2em;
+
+.input-label {
+  font-family: 'Burbank Big Condensed', sans-serif;
+  font-size: clamp(1rem, 4vw, 1.5rem);
+  color: white;
+  margin-right: 10px;
+  white-space: nowrap;
 }
 
-.read-the-docs {
-  color: #888;
+
+.text-box-container {
+  position: absolute;
+  left: 52%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 380px;
+}
+
+.first-box {
+  bottom: 10%;  /* first box lower */
+}
+
+.second-box {
+  bottom: 20%;  /* second box higher */
+}
+
+.text-box {
+  width: 100%;
+  height: 50px;
+  padding: 0 15px;         /* adjust horizontal padding */
+  box-sizing: border-box;
+  border: none;            /* remove black border */
+  border-radius: 8px;      /* optional: matches rounded corners */
+  background: url('./assets/Page1/greybox.png') no-repeat center / cover;
+  font-size: 1rem;
+  color: black;
+  outline: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
