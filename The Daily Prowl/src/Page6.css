@@ -1,0 +1,140 @@
+.double-line
+{
+  position: absolute;   
+  top: 10%;           /* instead of 12px */
+  left: 8%;  /* safer than left 62% */         /* instead of 237px */
+  width: 36%;   /* 25% of container width */ 
+  height: auto;
+}
+
+.desc
+{
+    position: absolute;   
+  top: 5%;           /* instead of 12px */
+  right: 8%;  /* safer than left 62% */         /* instead of 237px */
+  width: 36%;   /* 25% of container width */ 
+  height: auto;
+}
+
+.sched {
+  white-space: nowrap;  /* prevents text from breaking to the next line */
+  position: absolute;
+  top: 5%;       /* adjust so it’s below the sun */
+  left: 27%;      /* center horizontally */
+  transform: translateX(-50%); /* truly center */
+  font-family: 'Burbank Big Condensed', sans-serif;
+  font-size: clamp(1.5rem, 5vw, 3rem);  
+  font-weight: bold;
+  color: black;
+  text-align: center;
+}
+
+.today {
+  white-space: nowrap;  /* prevents text from breaking to the next line */
+  position: absolute;
+  top: 16%;       /* adjust so it’s below the sun */
+  left: 50%;      /* center horizontally */
+  transform: translateX(-50%); /* truly center */
+  font-family: 'Burbank Big Condensed', sans-serif;
+  font-size: clamp(1.5rem, 5vw, 3rem);  
+  font-weight: bold;
+  color: black;
+  text-align: center;
+}
+
+.calendar-container {
+  position: absolute;
+  top: 24%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-family: 'Burbank Big Condensed', sans-serif;
+  line-height: 1.4; /* increases spacing between lines of text */
+}
+
+.date {
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  color: black;
+}
+
+.time {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  color: slateblue;
+}
+
+
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 20px auto;
+  color: black;
+  font-family: 'Burbank Big Condensed', sans-serif;
+}
+
+.calendar-header button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: black;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  width: 90%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.calendar-day-name {
+  text-align: center;
+  font-weight: bold;
+  color: #333;
+  font-family: 'Burbank Big Condensed', sans-serif;
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  text-align: center;
+  line-height: 2.5rem;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.8);
+  font-family: 'Burbank Big Condensed', sans-serif;
+  color: black;
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 1.2rem; /* make sure the text isn’t scaling weirdly */
+}
+
+.calendar-day:hover {
+  background: rgba(255,255,255,1);
+  transform: scale(1.05);
+}
+
+.calendar-day.empty {
+  background: transparent;
+  pointer-events: none;
+}
+
+.calendar-day.today {
+  background: gold;
+  font-weight: bold;
+  color: black;
+}
+
+.selected-day-popup {
+  position: absolute;
+  bottom: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 10px 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  font-family: 'Burbank Big Condensed', sans-serif;
+}
