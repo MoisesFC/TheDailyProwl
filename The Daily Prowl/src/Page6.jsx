@@ -117,7 +117,7 @@ function Page6() {
         {days.map((day, i) => (
           <div
             key={i}
-            className={`calendar-day ${day ? '' : 'empty'} ${day === today.getDate() && currentMonth === today.getMonth() ? 'today' : ''}`}
+            className={`calendar-day ${day ? '' : 'empty'} ${day === today.getDate() && currentMonth === today.getMonth() ? '' : ''}`}
             onClick={() => day && setSelectedDay(day)}
           >
             {day}
