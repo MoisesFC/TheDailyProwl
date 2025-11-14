@@ -50,6 +50,23 @@ function SecondPage() {
       >
         Back to Login
       </button>
+
+
+      <button 
+        onClick={() => navigate('/third')} 
+        style={{ 
+          position: 'absolute', 
+          bottom: '5%', 
+          right: '5%', 
+          padding: '10px 20px',
+          fontFamily: "'Burbank Big Condensed', sans-serif",
+          fontSize: '1.5rem',
+          borderRadius: '8px',
+          cursor: 'pointer'
+        }}
+      >
+        Go to page 3!
+      </button>
     </div>
   );
 }
