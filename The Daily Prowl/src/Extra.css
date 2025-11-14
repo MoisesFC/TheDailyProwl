@@ -1,0 +1,84 @@
+.app-background {
+  position: relative;      /* make the container the reference for absolute children */
+  width: 100%;
+  height: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  background-image: url('./assets/Page1/DPBG.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+   padding-top: 10%;  /* shifts title & owl down */
+}
+
+
+.button {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  font-family: 'Burbank Big Condensed', sans-serif;
+  font-size: 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
+
+.choosetext
+{
+  position: absolute;   
+  top: 4cqmin;           /* instead of 12px */
+  left: 4%;  /* safer than left 62% */         /* instead of 237px */
+  width: 50%;   /* 25% of container width */ 
+  height: auto;
+}
+
+.yourtext
+{
+  position: absolute;   
+  top: 14%;           /* instead of 12px */
+  left: 31%;  /* safer than left 62% */         /* instead of 237px */
+  width: 36%;   /* 25% of container width */ 
+  height: auto;
+}
+
+
+.majortext
+{
+  position: absolute;   
+  top: 24%;           /* instead of 12px */
+  right: 7%;  /* safer than left 62% */         /* instead of 237px */
+  width: 45%;   /* 25% of container width */ 
+  height: auto;
+}
+
+.owlgo
+{
+  position: absolute;   
+  top: 3%;           /* instead of 12px */
+  right: 5%;  /* safer than left 62% */         /* instead of 237px */
+  width: 21%;   /* 25% of container width */ 
+  height: auto;
+}
+
+.major-dropdown {
+  position: absolute;
+  top: 45%;              /* adjust this to place it where you want */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  padding: 10px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  border: 2px solid black;
+  background: white;
+  font-family: 'Burbank Big Condensed', sans-serif;
+}
