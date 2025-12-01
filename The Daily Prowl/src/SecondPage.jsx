@@ -34,6 +34,8 @@ function SecondPage() {
         <option value="business">Business</option>
       </select>
 
+      <img src={Arrow} alt="arr" className="arrow" />
+
       <button 
         onClick={() => navigate('/sixth')} 
         style={{ 
@@ -57,7 +59,7 @@ function SecondPage() {
         style={{ 
           position: 'absolute', 
           bottom: '5%', 
-          right: '5%', 
+          right: '15%', 
           padding: '10px 20px',
           fontFamily: "'Burbank Big Condensed', sans-serif",
           fontSize: '1.5rem',
@@ -65,7 +67,7 @@ function SecondPage() {
           cursor: 'pointer'
         }}
       >
-        Go to page 3!
+        Next!
       </button>
     </div>
   );

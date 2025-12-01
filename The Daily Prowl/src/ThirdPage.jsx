@@ -102,16 +102,6 @@ function ThirdPage() {
           }}
         />
         <img
-          src={scrappyBucketListButton}
-          alt="Scrappy's Bucket List"
-          style={{
-            width: '250px',
-            height: 'auto',
-            cursor: 'pointer',
-            objectFit: 'contain'
-          }}
-        />
-        <img
           src={latestNewsButton}
           alt="Latest News"
           style={{
@@ -142,6 +132,7 @@ function ThirdPage() {
       {/* Account icon in the top-right corner */}
       <img
         src={accountIcon}
+        onClick={() => navigate('/fifth')}
         alt="Account"
         style={{
           position: 'absolute',

@@ -82,3 +82,12 @@
   background: white;
   font-family: 'Burbank Big Condensed', sans-serif;
 }
+
+.arrow
+{
+  position: absolute;   
+  bottom: 4.5%;           /* instead of 12px */
+  right: 1%;  /* safer than left 62% */         /* instead of 237px */
+  width: 12%;   /* 25% of container width */ 
+  height: auto;
+}
