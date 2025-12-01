@@ -8,7 +8,6 @@ import pageTitle from './assets/Page3/dailyprs.png';
 import upcommingEventsButton from './assets/Page3/DP6_0003_Upcoming-Events.png';
 import yourScheduleButton from './assets/Page3/DP6_0004_Your-Schedule.png';
 import ksuClubsButton from './assets/Page3/DP6_0005_KSU-Clubs.png';
-import scrappyBucketListButton from './assets/Page3/DP6_0006_Scrappy’s-Bucket-List.png';
 import latestNewsButton from './assets/Page3/DP6_0007_Latest-News.png';
 
 function ThirdPage() {

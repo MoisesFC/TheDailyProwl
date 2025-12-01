@@ -1,11 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import React from "react";
 
 /* icons */
-import iconSchedule from "./assets/Page5/Schedule.png";
-import iconSettings from "./assets/Page5/Settings.png";
-import iconSecurity from "./assets/Page5/Security.png";
-import iconMajor from "./assets/Page5/Major.png";
-import iconClubs from "./assets/Page5/Clubs.png";
+import accountIcon from './assets/Page3/DP6_0010_Account.png';
 import ksuLogo from "./assets/Page5/KSU.png";
 
 
@@ -18,9 +15,13 @@ import stamp from "./assets/Page5/stamp.png";
 
 
 import './App.css';
+
+function Page5() {
+  const navigate = useNavigate();
+  
 const styles = {
   phone: {
-    width: 390, height: 844, borderRadius: 28, overflow: "hidden", position: "relative",
+    width: 390, height: 700, borderRadius: 28, overflow: "hidden", position: "relative",
     background: "linear-gradient(#d9cb64, #ccb957)",
     boxShadow: "0 16px 48px rgba(0,0,0,.6), inset 0 2px 0 rgba(0,0,0,.55)",
     border: "1px solid rgba(0,0,0,.35)"
@@ -43,15 +44,15 @@ const styles = {
   row: {
     display: "grid", gridTemplateColumns: "1fr 54px", alignItems: "center", gap: 10,
     background: "#ebeef4", border: "2px solid #2d2a22", borderRadius: 14, padding: "14px 16px",
-    boxShadow: "0 3px 0 rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.55)", marginTop: 12
+    boxShadow: "0 3px 0 rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.55)", marginTop: 38
   },
   label: {
     fontWeight: 900, fontSize: 22, color: "#171513",
     textShadow: "0 2px 0 #fff, 0 3px 0 rgba(0,0,0,.25)"
   },
   icon: {
-    width: 48, height: 48, borderRadius: 10, border: "2px solid #2d2a22",
-    background: "#bba85b", display: "grid", placeItems: "center",
+    width: 48, height: 48, borderRadius: 10, border: "2px solid #ffc400ff",
+    background: "#ffc400ff", display: "grid", placeItems: "center",
     boxShadow: "0 3px 0 rgba(0,0,0,.35)"
   },
   ksu: {
@@ -84,20 +85,31 @@ const Row = ({ label, icon }) => (
   </div>
 );
 
-export default function MyAccountScreen() {
   return (
     <div className="app-background">
-        <div style={styles.header}>
-          <div style={styles.title}>My Account</div>
-          <Avatar />
-        </div>
+
+        <img
+                  src={accountIcon}
+                  onClick={() => navigate('/third')}
+                  alt="Account"
+                  style={{
+                    position: 'absolute',
+                    top: '10px',
+                    right: '12px',
+                    width: '100px',
+                    height: '100px',
+                    objectFit: 'contain',
+                    zIndex: 3,
+                    cursor: 'pointer'
+                  }}
+                />
 
         <div style={styles.content}>
-          <Row label="Schedule" icon={iconSchedule} />
-          <Row label="Settings" icon={iconSettings} />
-          <Row label="Security" icon={iconSecurity} />
-          <Row label="Major" icon={iconMajor} />
-          <Row label="Clubs" icon={iconClubs} />
+          <Row label="Schedule" icon={sched} />
+          <Row label="Settings" icon={gear} />
+          <Row label="Privacy Statement" icon={lok} />
+          <Row label="Major" icon={bok} />
+          <Row label="CLubs" icon={stamp} />
 
           <img src={ksuLogo} alt="KSU" style={styles.ksu} />
           <div style={styles.spot} />
@@ -105,3 +117,4 @@ export default function MyAccountScreen() {
       </div>
   );
 }
+export default Page5;
