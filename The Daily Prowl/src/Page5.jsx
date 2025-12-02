@@ -45,7 +45,7 @@ const styles = {
   row: {
     display: "grid", gridTemplateColumns: "1fr 54px", alignItems: "center", gap: 10,
     background: "#ebeef4", border: "2px solid #2d2a22", borderRadius: 14, padding: "14px 16px",
-    boxShadow: "0 3px 0 rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.55)", marginTop: 38
+    boxShadow: "0 3px 0 rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.55)", marginTop: 65
   },
   label: {
     fontWeight: 900, fontSize: 22, color: "#171513",
@@ -118,8 +118,7 @@ const Row = ({ label, icon, onClick, style }) => (
 
         <div style={styles.content}>
           <Row label="Schedule" icon={sched} onClick={() => navigate('/sixth')} style = {{cursor: 'pointer'}}/>
-          <Row label="Settings" icon={gear} />
-          <Row label="Privacy Statement" icon={lok}/>
+          <Row label="Privacy Statement" icon={lok} onClick={() => navigate('/priv')} style = {{cursor: 'pointer'}}/>
           <Row label="Major" icon={bok} onClick={() => navigate('/second')} style = {{cursor: 'pointer'}}/>
           <Row label="Clubs" icon={stamp} />
 
