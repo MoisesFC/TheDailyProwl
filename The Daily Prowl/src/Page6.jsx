@@ -97,8 +97,8 @@ function Page6() {
       <h1 className="sched">Schedule</h1>
       <h1 className="today">Today's Date:</h1>
       <img src={DL} alt="Double Line" className="double-line" />
-      <img src={Desc} alt="Description" className="desc" />
-
+      <img src={Desc} onClick={() => navigate('/third')} alt="Description" className="desc" style = {{cursor: 'pointer'}}/>
+      
       <div className="calendar-container">
         <p className="date">{formattedDate}</p>
         <p className="time">{formattedTime}</p>

@@ -19,6 +19,7 @@ import './App.css';
 function Page5() {
   const navigate = useNavigate();
   
+  
 const styles = {
   phone: {
     width: 390, height: 700, borderRadius: 28, overflow: "hidden", position: "relative",
@@ -78,10 +79,21 @@ const Avatar = () => (
   </div>
 );
 
-const Row = ({ label, icon }) => (
-  <div style={styles.row}>
+const Row = ({ label, icon, onClick, style }) => (
+  <div
+    style={{ ...styles.row, ...style }}
+    onClick={onClick}
+  >
     <div style={styles.label}>{label}</div>
-    <div style={styles.icon}><img src={icon} alt="" width="28" height="28" style={{filter:"drop-shadow(0 2px 0 rgba(0,0,0,.35))"}}/></div>
+    <div style={styles.icon}>
+      <img
+        src={icon}
+        alt=""
+        width="28"
+        height="28"
+        style={{ filter: "drop-shadow(0 2px 0 rgba(0,0,0,.35))" }}
+      />
+    </div>
   </div>
 );
 
@@ -105,11 +117,11 @@ const Row = ({ label, icon }) => (
                 />
 
         <div style={styles.content}>
-          <Row label="Schedule" icon={sched} />
+          <Row label="Schedule" icon={sched} onClick={() => navigate('/sixth')} style = {{cursor: 'pointer'}}/>
           <Row label="Settings" icon={gear} />
-          <Row label="Privacy Statement" icon={lok} />
-          <Row label="Major" icon={bok} />
-          <Row label="CLubs" icon={stamp} />
+          <Row label="Privacy Statement" icon={lok}/>
+          <Row label="Major" icon={bok} onClick={() => navigate('/second')} style = {{cursor: 'pointer'}}/>
+          <Row label="Clubs" icon={stamp} />
 
           <img src={ksuLogo} alt="KSU" style={styles.ksu} />
           <div style={styles.spot} />

@@ -1,4 +1,5 @@
 .app-background {
+  overflow: visible !important;
   position: relative;      /* make the container the reference for absolute children */
   width: 100%;
   height: 100%;
@@ -71,7 +72,7 @@
 
 .major-dropdown {
   position: absolute;
-  top: 45%;              /* adjust this to place it where you want */
+  top: 35%;              /* adjust this to place it where you want */
   left: 50%;
   transform: translateX(-50%);
   width: 60%;
@@ -81,6 +82,12 @@
   border: 2px solid black;
   background: white;
   font-family: 'Burbank Big Condensed', sans-serif;
+
+  /* ↓↓ NEW FIXES ↓↓ */
+  max-height: 50px; 
+  overflow-y: auto;
+  direction: ltr;
+  z-index: 20;
 }
 
 .arrow
