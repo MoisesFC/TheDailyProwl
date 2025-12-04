@@ -5,7 +5,7 @@ import ThirdPage from './ThirdPage';
 import Page5 from './Page5';
 import Page6 from './Page6';
 import Page8 from './Page8';
-
+import EventsPage from './EventsPage';
 
 import SecPage from './SecurityPage';
 
@@ -19,6 +19,7 @@ function App() {
         <Route path="/fifth" element={<Page5 />} />
         <Route path="/sixth" element={<Page6 />} />
         <Route path="/eighth" element={<Page8 />} />
+        <Route path="/events" element={<EventsPage />} />
 
         <Route path="/priv" element={<SecPage/>} />
       </Routes>

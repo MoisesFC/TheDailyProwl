@@ -70,6 +70,7 @@ function ThirdPage() {
       <div style={{ position: 'absolute', left: '20px', top: '50%', transform: 'translateY(-50%)', zIndex: 2, display: 'flex', flexDirection: 'column', gap: '50px' }}>
         <img
           src={upcommingEventsButton}
+          onClick={() => navigate('/events')}
           alt="Upcoming Events"
           style={{
             width: '250px',
