@@ -6,6 +6,7 @@ import Page5 from './Page5';
 import Page6 from './Page6';
 import Page8 from './Page8';
 import EventsPage from './EventsPage';
+import EventDetailPage from './EventDetailPage';
 
 import SecPage from './SecurityPage';
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/sixth" element={<Page6 />} />
         <Route path="/eighth" element={<Page8 />} />
         <Route path="/events" element={<EventsPage />} />
+        <Route path="/events/:id" element={<EventDetailPage />} />
 
         <Route path="/priv" element={<SecPage/>} />
       </Routes>

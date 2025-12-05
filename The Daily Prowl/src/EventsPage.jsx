@@ -231,9 +231,9 @@ function EventsPage() {
         <div style={styles.cardList}>
           {currentEvents.map((event) => (
             <div
-              key={event.id}
+              key={event.event_id}
               style={styles.card}
-              onClick={() => navigate(`/events/${event.id}`)}
+              onClick={() => navigate(`/events/${event.event_id}`)}
             >
               {event.image_url && (
                 <img src={event.image_url} alt={event.title} style={styles.cardImage} />
