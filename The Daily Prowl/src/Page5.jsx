@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import React from "react";
+import React, { useState } from "react";
+import { supabase } from './lib/supabaseClient';
 
 /* icons */
 import accountIcon from './assets/Page3/DP6_0010_Account.png';
@@ -12,12 +13,27 @@ import sched from "./assets/Page5/sched.png";
 import bok from "./assets/Page5/book.png";
 import gear from "./assets/Page5/gear.png";
 import stamp from "./assets/Page5/stamp.png";
+import logout from "./assets/Page5/logout.png";
 
 
 import './App.css';
 
 function Page5() {
   const navigate = useNavigate();
+  const [message, setMessage] = useState(null);
+
+  const handleLogout = async () => {
+    try {
+      const { error } = await supabase.auth.signOut();
+      if (error) throw error;
+      setMessage('Logged out successfully');
+      setTimeout(() => {
+        navigate('/');
+      }, 1000);
+    } catch (err) {
+      alert('Error logging out: ' + err.message);
+    }
+  };
   
   
 const styles = {
@@ -68,34 +84,34 @@ const styles = {
   }
 };
 
-const Avatar = () => (
-  <div style={styles.badge}>
-    <span style={{
-      width: 26, height: 26, borderRadius: "50%", display: "inline-block",
-      background:
-        "radial-gradient(circle at 50% 35%, #000 62%, transparent 63%)," +
-        "radial-gradient(circle at 50% 85%, #000 45%, transparent 46%)"
-    }}/>
-  </div>
-);
-
-const Row = ({ label, icon, onClick, style }) => (
-  <div
-    style={{ ...styles.row, ...style }}
-    onClick={onClick}
-  >
-    <div style={styles.label}>{label}</div>
-    <div style={styles.icon}>
-      <img
-        src={icon}
-        alt=""
-        width="28"
-        height="28"
-        style={{ filter: "drop-shadow(0 2px 0 rgba(0,0,0,.35))" }}
-      />
+  const Avatar = () => (
+    <div style={styles.badge}>
+      <span style={{
+        width: 26, height: 26, borderRadius: "50%", display: "inline-block",
+        background:
+          "radial-gradient(circle at 50% 35%, #000 62%, transparent 63%)," +
+          "radial-gradient(circle at 50% 85%, #000 45%, transparent 46%)"
+      }}/>
     </div>
-  </div>
-);
+  );
+
+  const Row = ({ label, icon, onClick, style }) => (
+    <div
+      style={{ ...styles.row, ...style }}
+      onClick={onClick}
+    >
+      <div style={styles.label}>{label}</div>
+      <div style={styles.icon}>
+        <img
+          src={icon}
+          alt=""
+          width="28"
+          height="28"
+          style={{ filter: "drop-shadow(0 2px 0 rgba(0,0,0,.35))" }}
+        />
+      </div>
+    </div>
+  );
 
   return (
     <div className="app-background">
@@ -117,10 +133,25 @@ const Row = ({ label, icon, onClick, style }) => (
                 />
 
         <div style={styles.content}>
+          {message && (
+            <div style={{
+              backgroundColor: '#4CAF50',
+              color: 'white',
+              padding: '10px 15px',
+              borderRadius: '10px',
+              marginBottom: '10px',
+              textAlign: 'center',
+              fontFamily: "'Burbank Big Condensed', sans-serif",
+              fontSize: '1rem'
+            }}>
+              {message}
+            </div>
+          )}
           <Row label="Schedule" icon={sched} onClick={() => navigate('/sixth')} style = {{cursor: 'pointer'}}/>
           <Row label="Privacy Statement" icon={lok} onClick={() => navigate('/priv')} style = {{cursor: 'pointer'}}/>
-          <Row label="Major" icon={bok} onClick={() => navigate('/second')} style = {{cursor: 'pointer'}}/>
+
           <Row label="Clubs" icon={stamp} />
+          <Row label="Logout" icon={logout} onClick={handleLogout} style = {{cursor: 'pointer'}}/>
 
           <img src={ksuLogo} alt="KSU" style={styles.ksu} />
           <div style={styles.spot} />

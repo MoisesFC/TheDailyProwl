@@ -14,10 +14,14 @@ function EventDetailPage() {
   const [actionLoading, setActionLoading] = useState(false);
   const [message, setMessage] = useState(null);
   const [messageType, setMessageType] = useState(null); // 'success' or 'warning'
-
-  const currentUser = getCurrentUser();
+  const [currentUser, setCurrentUser] = useState(null);
 
   useEffect(() => {
+    const init = async () => {
+      const user = await getCurrentUser();
+      setCurrentUser(user);
+    };
+    init();
     fetchEvent();
   }, [id]);
 
@@ -52,12 +56,43 @@ function EventDetailPage() {
   };
 
   const handleScheduleEvent = async () => {
+    if (!currentUser) {
+      alert('Please log in to schedule events');
+      return;
+    }
+
     setActionLoading(true);
     setMessage(null);
     setMessageType(null);
 
     try {
-      // First check if already scheduled
+      // First check if student exists in student table
+      const { data: existingStudent } = await supabase
+        .from('student')
+        .select('student_id')
+        .eq('student_id', currentUser.id)
+        .single();
+
+      // If student doesn't exist, create the record
+      if (!existingStudent) {
+        console.log('Student record not found, creating one...');
+        const { error: studentError } = await supabase
+          .from('student')
+          .insert({
+            student_id: currentUser.id,
+            ksu_email: currentUser.email,
+            first_name: 'Unknown',
+            last_name: 'User',
+            major: 'Undeclared'
+          });
+
+        if (studentError) {
+          console.error('Error creating student record:', studentError);
+          throw new Error('Could not create student profile. Please try logging out and signing up again.');
+        }
+      }
+
+      // Check if already scheduled
       const { data: existingSchedule } = await supabase
         .from('scheduled_event')
         .select('*')

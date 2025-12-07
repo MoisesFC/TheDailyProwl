@@ -11,7 +11,7 @@ import { getCurrentUser } from './utils/mockAuth';
 
 function Page6() {
   const navigate = useNavigate();
-  const currentUser = getCurrentUser();
+  const [currentUser, setCurrentUser] = useState(null);
 
   // For showing the current time and date to the user
   const [dateTime, setDateTime] = useState(new Date());
@@ -21,12 +21,19 @@ function Page6() {
   const [popupDate, setPopupDate] = useState(null);
   const [removing, setRemoving] = useState(false);
 
-  // Fetch scheduled events on mount
+  // Fetch current user and scheduled events on mount
   useEffect(() => {
-    fetchScheduledEvents();
+    const init = async () => {
+      const user = await getCurrentUser();
+      setCurrentUser(user);
+      if (user) {
+        fetchScheduledEvents(user.id);
+      }
+    };
+    init();
   }, []);
 
-  const fetchScheduledEvents = async () => {
+  const fetchScheduledEvents = async (userId) => {
     try {
       const { data, error } = await supabase
         .from('scheduled_event')
@@ -34,7 +41,7 @@ function Page6() {
           *,
           event (*)
         `)
-        .eq('student_id', currentUser.id);
+        .eq('student_id', userId);
 
       if (error) throw error;
       setScheduledEvents(data || []);
@@ -149,6 +156,11 @@ function Page6() {
   };
 
   const handleRemoveFromSchedule = async (eventId) => {
+    if (!currentUser) {
+      alert('Please log in to manage your schedule');
+      return;
+    }
+
     setRemoving(true);
     try {
       const { error } = await supabase
@@ -160,7 +172,7 @@ function Page6() {
       if (error) throw error;
 
       // Refresh the scheduled events
-      await fetchScheduledEvents();
+      await fetchScheduledEvents(currentUser.id);
 
       // Update popup events
       const updatedEvents = selectedDayEvents.filter(se => se.event_id !== eventId);

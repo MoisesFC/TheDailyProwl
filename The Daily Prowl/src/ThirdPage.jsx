@@ -141,7 +141,7 @@ function ThirdPage() {
           width: '100px',
           height: '100px',
           objectFit: 'contain',
-          zIndex: 3,
+          zIndex: 10,
           cursor: 'pointer'
         }}
       />
