@@ -92,7 +92,7 @@ function ThirdPage() {
         />
         <img
           src={ksuClubsButton}
-          onClick={() => navigate('/eighth')}
+          onClick={() => window.location.href = 'https://owllife.kennesaw.edu/organizations'}
           alt="KSU Clubs"
           style={{
             width: '250px',
