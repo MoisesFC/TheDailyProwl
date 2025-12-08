@@ -105,6 +105,7 @@ function ThirdPage() {
         <img
           src={latestNewsButton}
           alt="Latest News"
+          onClick={() => window.open('https://owllife.kennesaw.edu/', '_blank')}
           style={{
             width: '250px',
             height: 'auto',
