@@ -9,7 +9,7 @@ import upcommingEventsButton from './assets/Page3/DP6_0003_Upcoming-Events.png';
 import yourScheduleButton from './assets/Page3/DP6_0004_Your-Schedule.png';
 import ksuClubsButton from './assets/Page3/DP6_0005_KSU-Clubs.png';
 import latestNewsButton from './assets/Page3/DP6_0007_Latest-News.png';
-import bucketListButton from './assets/Page3/bucketList.png';
+import bucketListButton from './assets/Page3/bucketlist.png';
 
 function ThirdPage() {
   const navigate = useNavigate();
