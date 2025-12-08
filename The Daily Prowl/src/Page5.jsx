@@ -150,7 +150,7 @@ const styles = {
           <Row label="Schedule" icon={sched} onClick={() => navigate('/sixth')} style = {{cursor: 'pointer'}}/>
           <Row label="Privacy Statement" icon={lok} onClick={() => navigate('/priv')} style = {{cursor: 'pointer'}}/>
 
-          <Row label="Clubs" icon={stamp} onClick={() => window.location.href = 'https://owllife.kennesaw.edu/organizations'} style = {{cursor: 'pointer'}}/>
+          <Row label="Clubs" icon={stamp} onClick={() => window.open('https://owllife.kennesaw.edu/organizations', '_blank')} style = {{cursor: 'pointer'}}/>
           <Row label="Logout" icon={logout} onClick={handleLogout} style = {{cursor: 'pointer'}}/>
 
           <img src={ksuLogo} alt="KSU" style={styles.ksu} />
