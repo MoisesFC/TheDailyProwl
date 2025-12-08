@@ -9,6 +9,7 @@ import upcommingEventsButton from './assets/Page3/DP6_0003_Upcoming-Events.png';
 import yourScheduleButton from './assets/Page3/DP6_0004_Your-Schedule.png';
 import ksuClubsButton from './assets/Page3/DP6_0005_KSU-Clubs.png';
 import latestNewsButton from './assets/Page3/DP6_0007_Latest-News.png';
+import bucketListButton from './assets/Page3/bucketlist.png';
 
 function ThirdPage() {
   const navigate = useNavigate();
@@ -92,7 +93,7 @@ function ThirdPage() {
         />
         <img
           src={ksuClubsButton}
-          onClick={() => window.location.href = 'https://owllife.kennesaw.edu/organizations'}
+          onClick={() => navigate('/seventh')}
           alt="KSU Clubs"
           style={{
             width: '250px',
@@ -104,6 +105,17 @@ function ThirdPage() {
         <img
           src={latestNewsButton}
           alt="Latest News"
+          style={{
+            width: '250px',
+            height: 'auto',
+            cursor: 'pointer',
+            objectFit: 'contain'
+          }}
+        />
+        <img
+          src={bucketListButton}
+          onClick={() => window.open('https://owllife.kennesaw.edu/involvement/paths#/', '_blank')}
+          alt="Scrappy's Bucket Lists"
           style={{
             width: '250px',
             height: 'auto',
@@ -141,7 +153,7 @@ function ThirdPage() {
           width: '100px',
           height: '100px',
           objectFit: 'contain',
-          zIndex: 10,
+          zIndex: 3,
           cursor: 'pointer'
         }}
       />
