@@ -1,0 +1,301 @@
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Arial", sans-serif;
+}
+
+.clubs-page {
+  height: 100vh;
+  width: 100vw;
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clubs-frame {
+  width: 500px;
+  height: auto;
+  background-image: url("/background.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  padding: 16px 18px 24px 18px;
+  box-sizing: border-box;
+}
+
+/* top header */
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.brand-box {
+  padding: 6px 12px;
+  background-color: #f4f4f4;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 50px;
+}
+
+.top-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bell-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #000000;
+}
+
+.account-box {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.account-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f4b000;
+  border: 2px solid #000000;
+}
+
+.account-text {
+  font-weight: 700;
+  text-shadow: 1px 1px #ffffff;
+}
+
+/* title */
+
+.clubs-title {
+  text-align: center;
+  font-size: 44px;
+  margin: 4px 0 6px 0;
+  font-weight: 900;
+}
+
+.clubs-line {
+  height: 4px;
+  background-color: #000000;
+  margin: 0 18px 6px 18px;
+}
+
+/* owl life mock */
+
+.owl-shell {
+  margin-top: 6px;
+  flex: 1;
+  background-color: #f8fafc;
+  border-radius: 4px;
+  border: 2px solid #000000;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.owl-header {
+  height: 60px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #d1d5db;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.owl-menu {
+  width: 24px;
+  height: 24px;
+  border-radius: 3px;
+  border: 2px solid #111827;
+  margin-right: 8px;
+}
+
+.owl-logo-box {
+  flex: 1;
+  height: 32px;
+  background-color: #f4b000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  border: 2px solid #000000;
+}
+
+.owl-logo-text {
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.owl-header-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.owl-small-circle {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #111827;
+}
+
+.owl-profile-circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: #4b5563;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+/* owl content */
+
+.owl-content {
+  padding: 16px 18px 18px 18px;
+  box-sizing: border-box;
+}
+
+.owl-org-title {
+  font-size: 26px;
+  margin: 0 0 14px 0;
+  color: #1f2933;
+}
+
+.owl-search-row {
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  border: 1px solid #d1d5db;
+  background-color: #ffffff;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+}
+
+.owl-search-icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #6b7280;
+  margin-right: 8px;
+}
+
+.owl-search-placeholder {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.owl-filters-button {
+  width: 100%;
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 2px;
+  padding: 10px 0;
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.owl-register-button {
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 2px;
+  border: 1px solid #9ca3af;
+  padding: 10px 0;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+/* org cards */
+
+.owl-card {
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 2px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.2);
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.owl-avatar-circle {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: #f4b000;
+  margin-right: 12px;
+}
+
+.owl-avatar-circle.grey {
+  background-color: #9ca3af;
+}
+
+.owl-card-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.owl-card-title {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* bottom area */
+
+.bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.your-clubs-button {
+  flex: 1;
+  height: 54px;
+  background-color: #f3cf7a;
+  border-radius: 6px;
+  border: 3px solid #000000;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.home-icon {
+  width: 46px;
+  height: 46px;
+  margin-left: 12px;
+  border-radius: 6px;
+  border: 3px solid #000000;
+  background-color: #000000;
+}
+
+.back-button {
+  flex: 0 0 auto;  /* stop shrinking */
+  width: 120px;    /* or whatever width you want */
+  height: 54px;
+  background-color: #f3cf7a;
+  border-radius: 6px;
+  border: 3px solid #000000;
+  font-size: 22px;
+  font-weight: 800;
+}
